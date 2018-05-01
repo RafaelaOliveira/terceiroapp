@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="formulario">
+    <form [formGroup]="formLogin" (ngSubmit)="Login(); $event.preventDefault()">
+        <ion-item>
+          <ion-label floating ion-left>Usuário</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" formControlName="usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating ion-left>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="senha" formControlName="senha"></ion-input>
+        </ion-item>
+        <div class="botao"><button ion-button color="default" class="bnt" type="submit" [disabled]="formLogin.invalid">Enviar</button></div>  
+    </form>
+  </div>
+    <h1>{{resultado}}</h1>
+
+</ion-content>
